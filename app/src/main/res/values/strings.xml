@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">TouchGraphic</string>
+    <string name="str_butline">선 그리기</string>
+    <string name="str_butRect">사각형</string>
+    <string name="str_butCircle">원</string>
+
 </resources>

@@ -2,6 +2,7 @@ package kr.hs.emirim.dbwlsdud0407.touchgraphic;
 
 import android.content.Context;
 import android.graphics.Canvas;
+import android.graphics.Color;
 import android.graphics.Paint;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -24,7 +25,12 @@ public class MainActivity extends AppCompatActivity {
             float cx=getWidth()/2.0f;
             float cy=getHeight()/2.0f;
             Paint paint=new Paint();
-            canvas.drawCircle(cx,cy,50,paint);
+            paint.setColor(Color.BLUE);
+            paint.setStyle(Paint.Style.STROKE);
+            canvas.drawCircle(cx,cy,300,paint);
+            paint.setColor(Color.RED);
+            paint.setStyle(Paint.Style.FILL);
+            canvas.drawRect(100,100,500,250,paint);
         }
 
     }
