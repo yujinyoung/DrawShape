@@ -7,6 +7,7 @@ import android.graphics.Paint;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutCompat;
+import android.view.MotionEvent;
 import android.view.View;
 import android.widget.LinearLayout;
 
@@ -14,6 +15,8 @@ public class MainActivity extends AppCompatActivity {
     DrawShape ds;
     static final int LINE=1,RECT=2,CIRCLE=3;
     int chooseshape=CIRCLE;
+    int startx,starty,stopx,stopy;
+    int r;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -57,22 +60,43 @@ public class MainActivity extends AppCompatActivity {
             paint.setStyle(Paint.Style.STROKE);
             switch (chooseshape){
                 case LINE:
-                    canvas.drawLine(50,100,650,100,paint);
+                    canvas.drawLine(startx,starty,stopx,stopy,paint);
                     break;
 
                 case RECT:
                     paint.setColor(Color.MAGENTA);
                     paint.setStyle(Paint.Style.FILL);
-                    canvas.drawRect(100,100,500,250,paint);
+                    canvas.drawRect(startx,starty,stopx,stopy,paint);
                     break;
 
                 case CIRCLE:
-                    canvas.drawCircle(cx,cy,300,paint);
+                    r=(int)Math.sqrt(Math.pow(stopx,startx)-Math.pow(stopy,starty));
+                    canvas.drawCircle(startx,starty,r,paint);
                     break;
             }
 
 
         }
 
+        @Override
+        public boolean onTouchEvent(MotionEvent event) {
+            switch (event.getAction()){
+                case MotionEvent.ACTION_DOWN:
+                    startx=(int)event.getX();
+                    starty=(int)event.getY();
+                    break;
+                case MotionEvent.ACTION_MOVE:
+
+                    break;
+                case MotionEvent.ACTION_UP:
+                    stopx=(int)event.getX();
+                    stopy=(int)event.getY();
+                    break;
+
+            }
+
+            invalidate();
+            return true;
+        }
     }
 }
