@@ -23,6 +23,7 @@
             android:textAppearance="?android:textAppearanceLarge"
             android:layout_marginRight="10dp"
             android:gravity="center"
+            android:onClick="drawshape"
             />
         <Button
             android:id="@+id/but_rect"
@@ -31,6 +32,7 @@
             android:text="@string/str_butRect"
             android:textAppearance="?android:textAppearanceLarge"
             android:layout_marginRight="10dp"
+            android:onClick="drawshape"
             />
         <Button
             android:id="@+id/but_circle"
@@ -39,6 +41,7 @@
             android:text="@string/str_butCircle"
             android:textAppearance="?android:textAppearanceLarge"
             android:layout_marginRight="10dp"
+            android:onClick="drawshape"
             />
 
 

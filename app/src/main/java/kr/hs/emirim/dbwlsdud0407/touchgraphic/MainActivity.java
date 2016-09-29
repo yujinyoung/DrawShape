@@ -14,7 +14,13 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        setContentView(new DrawShape(getApplicationContext()));
+       // setContentView(new DrawShape(getApplicationContext()));
+    }
+    public void drawshape(View v){  //hander==view
+
+
+
+
     }
     class DrawShape extends View{
         DrawShape(Context context){
